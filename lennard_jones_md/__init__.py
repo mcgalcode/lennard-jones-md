@@ -144,7 +144,7 @@ class LennardJonesMolecularDynamics():
         """
         return v + 0.5 * (a + a1) * dt
 
-    def run(self, dt, number_of_steps, initial_temp, x, vs=None):
+    def run(self, dt, number_of_steps, initial_temp, x, v=None):
         """
         Run a MD simulation.
         
@@ -168,8 +168,8 @@ class LennardJonesMolecularDynamics():
             throughout the simulation (Å)
         """
         positions = np.zeros((number_of_steps, len(x)))
-        if vs is None:
-            vs = LennardJonesMolecularDynamics.initialize_velocities(initial_temp, len(x))
+        if v is None:
+            v = LennardJonesMolecularDynamics.initialize_velocities(initial_temp, len(x))
         a = self.get_accelerations(x)
         for i in range(number_of_steps):
             x = self.update_pos(x, v, a, dt)
