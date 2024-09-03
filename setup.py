@@ -10,6 +10,6 @@ setup(name='lennard_jones_md',
       packages=['lennard_jones_md'],
       zip_safe=False,
       install_requires=[
-          'numpy',
-          'scipy'
+          'numpy==2.1.1',
+          'scipy==1.14.1'
       ])
