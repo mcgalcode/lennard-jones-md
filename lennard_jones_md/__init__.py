@@ -144,7 +144,7 @@ class LennardJonesMolecularDynamics():
         """
         return v + 0.5 * (a + a1) * dt
 
-    def run(self, dt, number_of_steps, initial_temp, x, v=None):
+    def run(self, dt, number_of_steps, initial_temp, x):
         """
         Run a MD simulation.
         
